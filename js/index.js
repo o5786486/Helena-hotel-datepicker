@@ -1,8 +1,14 @@
+//取得今天的日期
 var today = new Date();
+//取得明天的日期
 var tomorrow = new Date();
+//明天的日期＝今天的日期+1 這是預設值 可以依照你的需求改預設end date要+幾天
 tomorrow.setDate(tomorrow.getDate() + 1);
+//去抓input欄位
 var input = document.getElementById('input-id');
+//用來設定input欄位預設值的顯示格式
 input.value = fecha.format(today, 'YYYY-MM-DD') + ' - ' + fecha.format(tomorrow, 'YYYY-MM-DD');
+//用來設定日期選擇器的一些細部設定 可以加很多設定 不會可以問我 或去 http://lopezb.com/hoteldatepicker/ 看他的範例
 var datepicker = new HotelDatepicker(input,{autoClose: false,
     i18n: {
         selected: '請確認您的日期:',
