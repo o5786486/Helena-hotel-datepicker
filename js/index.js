@@ -9,7 +9,13 @@ var input = document.getElementById('input-id');
 //用來設定input欄位預設值的顯示格式
 input.value = fecha.format(today, 'YYYY-MM-DD') + ' - ' + fecha.format(tomorrow, 'YYYY-MM-DD');
 //用來設定日期選擇器的一些細部設定 可以加很多設定 不會可以問我 或去 http://lopezb.com/hoteldatepicker/ 看他的範例
-var datepicker = new HotelDatepicker(input,{autoClose: false,
+var datepicker = new HotelDatepicker(input,{
+    //onSelectRange是指說他選定一個日期才會變true 也就是選定日期這個函示才會作用
+    onSelectRange: function() {   
+        //datepicker.getNights()就是可以抓出晚數的函示
+		console.log(datepicker.getNights())
+	},
+    autoClose: false,
     i18n: {
         selected: '請確認您的日期:',
         night: '晚',
